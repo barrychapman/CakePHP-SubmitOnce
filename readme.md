@@ -18,3 +18,18 @@ Include the component
 
 	var $components = array( 'SubmitOnce.SubmitOnce' );
 
+Add the following to your controllers beforeFilter() and beforeRender() functions:
+
+	function beforeRender() {
+		
+		$this->SubmitOnce->create();
+		
+		parent::beforeRender();
+		
+	}
+
+	function beforeFilter() {
+				
+		$this->SubmitOnce->process();
+		
+	}
