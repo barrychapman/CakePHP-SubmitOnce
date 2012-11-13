@@ -20,16 +20,14 @@ Include the component
 
 Add the following to your controllers beforeFilter() and beforeRender() functions:
 
+```php
 	function beforeRender() {
-		
 		$this->SubmitOnce->create();
-		
 		parent::beforeRender();
-		
 	}
 
 	function beforeFilter() {
-				
 		$this->SubmitOnce->process();
-		
+		parent::beforeFilter();
 	}
+```
