@@ -14,8 +14,19 @@ class SubmitOnceComponent extends Object {
 	function initialize( &$controller, $settings = array() ) {
 		
 		$this->Controller 	= $controller;
+		
+		if ( isset( $this->Controller->Security->validatePost ) && $this->Controller->Security->validatePost ) {
+			$this->Controller->Security->disabledFields = array_merge( $this->Controller->Security->disabledFields, array( '_SubmitOnce' ) );
+		}
+		
 		$this->Settings   	= $settings;
 		$this->SecureToken 	= ClassRegistry::init( 'SecureToken' );
+		
+	}
+	
+	function startup( &$controller ) {
+		
+
 		
 	}
 	

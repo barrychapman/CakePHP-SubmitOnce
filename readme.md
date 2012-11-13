@@ -9,7 +9,7 @@ A plugin to prevent double submission of forms.
 - Specify Model used in form
 - Simple Setup!
 
-### Setup
+## Setup
 
 Extract this to the folder `APP/plugins/submit_once`
 
@@ -39,3 +39,10 @@ Add the following to your controllers `beforeFilter()` and `beforeRender()` func
 	}
 ```
 
+In your view, when you create your form, simply do it the following way:
+
+```php
+	echo $this->SubmitOnce->create( 'Model', array( 'url' => $this->here ) );
+```
+
+This is where you create your form, previously, you would do it with `$this->Form->create( 'Model', $params );`. Pass your parameters the same way. This will automatically create a hidden field in your markup
