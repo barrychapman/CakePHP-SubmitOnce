@@ -15,12 +15,15 @@ Extract this to the folder `APP/plugins/submit_once`
 
 
 Include the helper
-
+```php
 	var $helpers = array( 'SubmitOnce.SubmitOnce' );
+```
 
 Include the component
 
+```php
 	var $components = array( 'SubmitOnce.SubmitOnce' );
+```
 
 Add the following to your controllers `beforeFilter()` and `beforeRender()` functions:
 
