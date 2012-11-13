@@ -9,6 +9,10 @@ A plugin to prevent double submission of forms.
 - Specify Model used in form
 - Simple Setup!
 
+### Setup
+
+Extract this to the folder `APP/plugins/submit_once`
+
 
 Include the helper
 
@@ -18,7 +22,7 @@ Include the component
 
 	var $components = array( 'SubmitOnce.SubmitOnce' );
 
-Add the following to your controllers beforeFilter() and beforeRender() functions:
+Add the following to your controllers `beforeFilter()` and `beforeRender()` functions:
 
 ```php
 	function beforeRender() {
@@ -31,3 +35,4 @@ Add the following to your controllers beforeFilter() and beforeRender() function
 		parent::beforeFilter();
 	}
 ```
+
